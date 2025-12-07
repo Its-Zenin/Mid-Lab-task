@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff;
+        }
+
+        h1 {
+            margin: 20px;
+        }
+
+        .form-container {
+            width: 320px;
+            margin: 50px auto;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px 20px 20px;
+            position: relative;
+            background: #fafafa;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .note {
+            position: absolute;
+            top: -12px;
+            right: 10px;
+            background: #1e90ff;
+            color: white;
+            padding: 3px 8px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        label {
+            display: inline-block;
+            width: 80px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 190px;
+            padding: 5px;
+            border: 2px solid #ff9999;
+            border-radius: 3px;
+            outline: none;
+            font-size: 13px;
+        }
+
+        textarea {
+            height: 60px;
+            resize: none;
+        }
+
+        .row {
+            margin-bottom: 10px;
+        }
+
+        .checkbox-row {
+            font-size: 13px;
+            margin: 10px 0;
+        }
+
+        .checkbox-row input {
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 13px;
+
+        }
+
+        button:hover {
+            background-color: #0f75d1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Contact Us</h1>
+
+    <div class="form-container">
+        <div class="note">Remember to fill in all fields!</div>
+
+        <form onsubmit="return validateForm()">
+            <div class="row">
+                <label>Name:</label>
+                <input type="text" id="name">
+            </div>
+
+            <div class="row">
+                <label>Email:</label>
+                <input type="email" id="email">
+            </div>
+
+            <div class="row">
+                <label>Message:</label>
+                <textarea id="message"></textarea>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="subscribe">
+                <label for="subscribe" style="width:auto; font-weight:normal;">
+                    Subscribe to newsletter
+                </label>
+            </div>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill in all fields!");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>
